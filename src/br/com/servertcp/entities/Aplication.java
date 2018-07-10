@@ -1,3 +1,6 @@
+//https://www.devmedia.com.br/java-socket-entendendo-a-classe-socket-e-a-serversocket-em-detalhes/31894
+//https://www.devmedia.com.br/java-sockets-criando-comunicacoes-em-java/9465
+
 package br.com.servertcp.entities;
 
 import java.io.IOException;
@@ -22,11 +25,11 @@ public class Aplication {
 				System.out.println("Servidor iniciado na porta 6643");
 
 				// O metodo accept() esculta se ha alguma conexao com servidor e a aceita.
-				// enquanto o metodo accept() n„o È execultado, todo o codigo abaixo dele tb
-				// n„ocÈ excultado.
+				// enquanto o metodo accept() n√£o √© execultado, todo o codigo abaixo dele tb
+				// n√£oc√© excultado.
 				Socket cliente = server.accept();
 
-				// O metodo getInetAddress() -> captura o endereÁo IP no qual o socket esta
+				// O metodo getInetAddress() -> captura o endere√ßo IP no qual o socket esta
 				// conectado.
 				// O metodo getHostAddress() -> pega o IP capturado pelo metodo getInetAddress()
 				// e o converte para string no formato de IP.
@@ -37,9 +40,9 @@ public class Aplication {
 				Scanner entrada = new Scanner(cliente.getInputStream());
 				String reportStt[] = entrada.next().split(";");
 
-				System.out.println("CabeÁalho: " + reportStt[0] + "\n");
+				System.out.println("Cabe√ßalho: " + reportStt[0] + "\n");
 				System.out.println("ID: " + reportStt[1] + "\n");
-				System.out.println("Vers„o: " + reportStt[2] + "\n");
+				System.out.println("Vers√£o: " + reportStt[2] + "\n");
 				System.out.println("Data: " + reportStt[3] + "\n");
 				System.out.println("Horario: " + reportStt[4] + "\n");
 				System.out.println("CellID: " + reportStt[5] + "\n");
